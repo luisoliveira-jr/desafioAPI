@@ -1,0 +1,13 @@
+require("dotenv").config()
+const express = require("express")
+const router = require("./routes/routes")
+
+const app = express()
+
+app.use(express.json())
+app.use(router)
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`Backend server is running ${process.env.PORT}...`)
+})
